@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container h1 {
+  margin: 2rem 0 1rem 0;
+}
+.container input{
+  font-size: 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  background-color: #E6E6E6;
+  padding: 1rem 0;
+}
+input::placeholder{
+  padding: 0 1rem;
+}
+.container button {
+  width: 100%;
+  background-color: #EA4C89;
+  color: #FFFFFF;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: filter .2s;
+}
+.container button:hover{
+  filter: brightness(0.9);
+}
+
+@media (min-width: 720px) {
+  .container input,
+  .container button{
+    width: 70%;
+  }
+}
