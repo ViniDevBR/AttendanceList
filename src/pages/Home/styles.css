@@ -12,10 +12,7 @@
   border: none;
   border-radius: 1rem;
   background-color: #E6E6E6;
-  padding: 1rem 0;
-}
-input::placeholder{
-  padding: 0 1rem;
+  padding: 1rem;
 }
 .container button {
   width: 100%;
@@ -28,10 +25,11 @@ input::placeholder{
   border-radius: 1rem;
   border: none;
   cursor: pointer;
-  transition: filter .2s;
+  transition: .2s;
 }
 .container button:hover{
-  filter: brightness(0.9);
+  background-color: #c01e5c
+  ;
 }
 
 @media (min-width: 720px) {

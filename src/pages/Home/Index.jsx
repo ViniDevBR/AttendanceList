@@ -15,7 +15,7 @@ export function Home() {
         second: '2-digit'
       })
     }
-    setStudents([newStudent])
+    setStudents(previousState => [...previousState, newStudent])
   }
   return (
     <div className='container'>
