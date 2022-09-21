@@ -5,9 +5,11 @@ import './styles.css'
 export function Home() {
   const [studentName, setStudentName] = useState('')
   const [students, setStudents] = useState([])
-
+  const idNumber = Math.floor(Math.random() * 100) + 1; //1-100
+  
   function addNewStudent(){
     const newStudent = {
+      id: idNumber,
       name: studentName,
       time: new Date().toLocaleTimeString('pt-br', {
         hour: '2-digit',
@@ -28,7 +30,11 @@ export function Home() {
       
       <button type="button" onClick={addNewStudent}>Adicionar</button>
       {
-        students.map(student => <Card name={student.name} time={student.time}/>)
+        students.map(student =>( <Card 
+          key={student.id}
+          name={student.name} 
+          time={student.time}
+        />))
       }
       
     </div>
