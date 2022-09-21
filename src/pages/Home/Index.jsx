@@ -1,18 +1,36 @@
+import { useState } from 'react'
 import { Card } from '../../components/Card/Index'
 import './styles.css'
 
 export function Home() {
- 
+  const [studentName, setStudentName] = useState('')
+  const [students, setStudents] = useState([])
+
+  function addNewStudent(){
+    const newStudent = {
+      name: studentName,
+      time: new Date().toLocaleTimeString('pt-br', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      })
+    }
+    setStudents([newStudent])
+  }
   return (
     <div className='container'>
       <h1>Attendace List</h1>
-      <input type="text" placeholder="Digite o nome..."/>
-      <button type="button">Adicionar</button>
-
-      <Card name='Vinicius' time='12:10'/>
-      <Card name='Aline' time='16:50'/>
-      <Card name='Mariana' time='13:30'/>
-      <Card name='Emanuel' time='09:20'/>
+      <input 
+      type="text" 
+      placeholder="Digite o nome..."
+      onChange={event => setStudentName(event.target.value)}
+      />
+      
+      <button type="button" onClick={addNewStudent}>Adicionar</button>
+      {
+        students.map(student => <Card name={student.name} time={student.time}/>)
+      }
+      
     </div>
   )
 }
