@@ -27,8 +27,7 @@ export function Home() {
       placeholder="Digite o nome..."
       onChange={event => setStudentName(event.target.value)}
       />
-      
-      <button type="button" onClick={addNewStudent}>Adicionar</button>
+      <button className='add' type="button" onClick={addNewStudent}>Adicionar</button>
       {
         students.map(student =>( <Card 
           key={student.id}

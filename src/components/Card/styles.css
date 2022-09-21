@@ -1,19 +1,29 @@
-.card{
-  color: #FFFFFF;
-  background-color: blueviolet;
+.card {
+  color: #ffffff;
+  background-color: #8a2be2;
   height: 4rem;
   border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 0 0 0 1rem;
   margin: 1rem 0 0 0;
 }
-strong, p{
+.trash{
+  display: flex;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0 1rem 1rem 0;
   padding: 1rem;
+  background-color: transparent;
+  transition: .5s;
+}
+.trash:hover{
+  background-color: #41008b;
 }
 @media (min-width: 720px) {
-  .card{
+  .card {
     width: 70%;
   }
 }

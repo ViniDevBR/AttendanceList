@@ -14,7 +14,7 @@
   background-color: #E6E6E6;
   padding: 1rem;
 }
-.container button {
+.container .add {
   width: 100%;
   background-color: #EA4C89;
   color: #FFFFFF;
@@ -27,14 +27,14 @@
   cursor: pointer;
   transition: .2s;
 }
-.container button:hover{
+.container .add:hover{
   background-color: #c01e5c
   ;
 }
 
 @media (min-width: 720px) {
   .container input,
-  .container button{
+  .container .add{
     width: 70%;
   }
 }
