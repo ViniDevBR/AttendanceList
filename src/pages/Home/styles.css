@@ -2,9 +2,26 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 1rem;
 }
-.container h1 {
-  margin: 2rem 0 1rem 0;
+.container header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.infos {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.infos strong {
+  font-size: 0.3rem;
+}
+.infos img {
+  width: 2rem;
+  border-radius: 50%;
 }
 .container input{
   font-size: 1rem;
@@ -34,7 +51,17 @@
 
 @media (min-width: 720px) {
   .container input,
+  .container header,
   .container .add{
     width: 70%;
+  }
+  .container header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  }
+  header h1 {
+    font-size: 1.5rem;
   }
 }

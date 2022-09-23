@@ -6,7 +6,9 @@ export function Card(props) {
     <div className='card'>
       <strong>{props.name}</strong>
       <p>{props.time}</p>
-      <button className='trash'>
+      <button
+      onClick={props.onClick}
+      className='trash'>
         <Trash size={32}/>
       </button>
     </div>

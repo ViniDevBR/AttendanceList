@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Card } from '../../components/Card/Index'
 import './styles.css'
 
@@ -22,7 +21,11 @@ export function Home() {
         second: '2-digit'
       })
     }
+    if (!studentName){
+      return
+    }
     setStudents(previousState => [...previousState, newStudent])
+    setStudentName('')
   }
   useEffect(() => {
     const url = 'https://api.github.com/users/vinidevbr'
@@ -35,18 +38,26 @@ export function Home() {
       })
     })
   },[])
+
+  function removeStudent(studentID) {
+    const removedStudent = students.filter(student => student !== studentID)
+    
+    setStudents(removedStudent)
+  }
+ 
   return (
     <div className='container'>
       <header>
         <h1>Attendace List</h1>
-        <div>
-          <p>{user.name}</p>
+        <div className='infos'>
+          <strong>{user.name}</strong>
           <img src={user.avatar} alt="Foto do usuario" />
         </div>
       </header>
       <input 
       type="text" 
       placeholder="Digite o nome..."
+      value={studentName}
       onChange={event => setStudentName(event.target.value)}
       />
       <button className='add' type="button" onClick={addNewStudent}>Adicionar</button>
@@ -55,9 +66,11 @@ export function Home() {
           key={student.id}
           name={student.name} 
           time={student.time}
-        />))
-      }
-      
+          onCLick={console.log('clicado')}
+          />
+        ))
+      } 
     </div>
   )
 }
+// () => removeStudent(student.id)
